@@ -1,0 +1,344 @@
+:root{
+    --light-cian: #ccefff;
+    --dark-brown: #a54a38;
+    --light-brown: #bf624c;
+    --dark-green:#51af5e;
+    --light-green:#7bbb80;
+    --shadow:0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    counter-reset: score;
+    place-items: center;
+}
+.phone{
+    position: relative;
+    border: 8px solid black;
+    border-radius: 40px;
+    width: 320px;
+    height: 600px;
+    background: var(--light-cian);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    margin: 45px 0 10px;
+}
+.title img{
+    width: 60%;
+}
+.score{
+    color: var(--light-brown);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    margin:0;
+}
+.layer-1{
+    position: absolute;
+    z-index: 1;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    right: 60px;
+    animation-name: layer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer{
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom: -80px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+input[type=checkbox]{
+    appearance: none;
+    cursor:pointer;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    z-index: 1;
+}
+input[type=checkbox]:focus{
+    appearance: none;
+    outline: none;
+}
+input:checked{
+    counter-increment: score;
+}
+.score::after{
+    content: counter(score);
+}
+@keyframes bunny{
+    0%{
+        top:0;
+    }
+    25%{
+        top: 80px;
+    }
+    100%{
+        top:0;
+    }
+}
+.layer-2{
+    position: absolute;
+    z-index: 2;
+    width: 80px;
+    height: 450px;
+    bottom: 0;
+    left: 60px;
+    animation-name: layer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-3{
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+    background: var(--light-brown);
+    width: 280px;
+    height: 400px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0  auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+.land{
+    background: linear-gradient(135deg, var(--dark-green) 25%, transparent 25%) -50px 0, linear-gradient(-135deg, var(--dark-green) 25%, transparent 25%) -50px 0, linear-gradient(45deg, var(--light-brown) 25%, transparent 25%), linear-gradient(-45deg, transparent 25%, var(--dark-brown) 25%);
+    background-size: 33px 30px;
+    width:100%;
+    height: 30px;
+}
+.lawn{
+    background:var(--dark-green);
+    height: 20px;
+    width:100%;
+}
+.layer-4{
+    position: absolute;
+    z-index: 4;
+    width: 80px;
+    height: 350px;
+    left: 10px;
+    bottom: 0;
+    animation-name: layer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-5{
+    position: absolute;
+    z-index: 5;
+    width:250px;
+    height: 300px;
+    background: var(--light-brown);
+    bottom: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:var(--shadow)
+}
+.layer-6{
+    position: absolute;
+    z-index: 6;
+    width: 80px;
+    height: 240px;
+    bottom: 0;
+    right: 50px;
+    animation-name: layer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-7{
+    position: absolute;
+    z-index: 7;
+    width:200px;
+    height: 190px;
+    background: var(--light-brown);
+    bottom: 0;
+    right:0;
+    border-radius: 20px;
+    overflow:hidden;
+    box-shadow:var(--shadow)
+}
+.layer-8{
+    position: absolute;
+    z-index: 8;
+    width:290px;
+    height: 150px;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: 0 auto;
+}
+.layer-8__left-lawn{
+    background: var(--dark-green);
+    height:70%;
+    width:80px;
+    border-radius:40px 40px 0 0;
+    display: inline-block;
+    bottom:0;
+    left:0;
+}
+.layer-8__center-lawn{
+    background:var(--dark-green);
+    height:100%;
+    width:80px;
+    border-radius: 40px 40px 0 0;
+    position: absolute;
+    display: inline-block;
+    left: 60px;
+    bottom:0;
+}
+.layer-8__right-lawn{
+    background:var(--dark-green);
+    height:80%;
+    width:80px;
+    border-radius: 40px 40px 0 0;
+    position: absolute;
+    display: inline-block;
+    left: 130px;
+    bottom:0;
+}
+.layer-9{
+    position: absolute;
+    z-index: 9;
+    height: 120px;
+    width: 120px;
+    bottom: 0;
+}
+.layer-9__left-cloud{
+    background: white;
+    width:80px;
+    height:100%;
+    border-radius: 40px 40px 0 0;
+    left:0;
+    position: absolute;
+    display: inline-block;
+}
+.layer-9__right-cloud{
+    background: white;
+    width:40px;
+    height:60%;
+    border-radius: 0px 40px 30px 0;
+    left:80px;
+    position: absolute;
+    display: inline-block;
+    bottom:0;
+}
+.layer-10{
+    position: absolute;
+    z-index: 10;
+    height: 120px;
+    width: 120px;
+    bottom: 0;
+    right: 0;
+}
+.layer-10__left-cloud{
+    background: white;
+    width:40px;
+    height:60%;
+    position: absolute;
+    display: inline-block;
+    border-radius:  40px 0 0 30px;
+    right: 80px;
+    bottom:0;
+}
+.layer-10__right-cloud{
+    background: white;
+    width:80px;
+    height:100%;
+    position: absolute;
+    display: inline-block;
+    border-radius:  40px 40px 0 0;
+    right: 0;
+    bottom:0;
+}
+.left-ear--outer{
+    background: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+}
+.left-ear--inner{
+    background: pink;
+    border-radius: 90%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    left: 5px;
+    top:8px;
+}
+.right-ear--outer{
+    background: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+}
+.right-ear--inner{
+    background: pink;
+    border-radius: 90%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    top:8px;
+}
+.head{
+    background: white;
+    width: 100%;
+    height: 80px;
+    border-radius: 50%;
+    top: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.head__eye{
+    background: grey;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 15px;
+    animation: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite ;
+}
+@keyframes blink{
+    0%{
+        height: 4px;
+    }
+    5%{
+        transform: translate(0px, 2px);
+        height: 1px;
+    }
+    10%{
+        height: 4px;
+        transform: translate(0px, 0px);
+    }
+}
+.head__eye--left{
+    left: 30px;
+}
+.head__eye--right{
+    right: 30px;
+}
